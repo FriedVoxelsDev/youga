@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUGA - AI Yoga Pose Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Mediapipe Libraries from CDN -->
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>YOUGA <span>AI</span></h1>
+        <p>Real-time AI Yoga Pose Feedback</p>
+    </header>
+
+    <main class="container">
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <label for="pose-select">Choose a Yoga Pose:</label>
+            <select id="pose-select">
+                <option value="plank">Plank Pose (Phalakasana)</option>
+                <option value="warrior2">Warrior II (Virabhadrasana II)</option>
+                <option value="tree">Tree Pose (Vriksasana)</option>
+            </select>
+
+            <div class="feedback-box">
+                <h3>AI Feedback</h3>
+                <p id="feedback-text" class="status-waiting">Loading AI Model...</p>
+            </div>
+            
+            <button id="start-btn" disabled>Start Camera</button>
+        </div>
+
+        <!-- Video & AI Rendering Workspace -->
+        <div class="video-container">
+            <video id="webcam" autoplay playsinline muted></video>
+            <canvas id="output-canvas"></canvas>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
